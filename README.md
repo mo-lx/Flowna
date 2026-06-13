@@ -35,21 +35,6 @@ Flowna 是一款简洁优雅的桌面便签应用，基于 Electron 构建，支
 - **本地存储** -- SQLite 数据库，WAL 模式
 - **导入导出** -- JSON 格式备份，支持合并导入和替换导入
 
-## 技术栈
-
-| 技术 | 用途 |
-| --- | --- |
-| [Electron](https://www.electronjs.org/) 29 | 桌面容器 |
-| [React](https://react.dev/) 18 | 前端框架 |
-| [TypeScript](https://www.typescriptlang.org/) 5 | 类型安全 |
-| [TipTap](https://tiptap.dev/) 2 | 富文本编辑器 |
-| [Zustand](https://zustand-demo.pmnd.rs/) 4 | 状态管理 |
-| [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) 9 | 本地数据库 |
-| [electron-vite](https://electron-vite.org/) 2 | 构建工具 |
-| [lucide-react](https://lucide.dev/) | 图标库 |
-| [dayjs](https://day.js.org/) | 日期处理 |
-| [electron-builder](https://www.electron.build/) | 应用打包 |
-
 ## 界面截图
 
 - 主界面
@@ -59,8 +44,6 @@ Flowna 是一款简洁优雅的桌面便签应用，基于 Electron 构建，支
 - 浮笺模式（悬浮小窗）
 
 ![浮笺模式](assets/image-20260614012128987.png)
-
-
 
 ## 环境要求
 
@@ -91,67 +74,9 @@ Windows 下也可直接运行 `start.bat` 或 `Flowna.vbs`。
 npm run build
 ```
 
-### 打包
+### 封装好的软件：
 
-```bash
-# 通用打包
-npm run dist
-
-# Windows（NSIS 安装包）
-npm run dist:win
-
-# macOS（DMG）
-npm run dist:mac
-
-# Linux（AppImage）
-npm run dist:linux
-```
-
-## 项目结构
-
-```
-flowna/
-├── docs/                          文档
-│   ├── 功能规格文档.md
-│   └── 用户使用说明.md
-├── resources/                     应用资源
-│   ├── icon.ico
-│   └── icon.png
-├── src/
-│   ├── main/                      Electron 主进程
-│   │   ├── index.ts               窗口创建、紧凑模式控制
-│   │   ├── db.ts                  SQLite 数据库操作
-│   │   └── ipc-handlers.ts        IPC 处理器注册
-│   ├── preload/                   预加载脚本
-│   │   └── index.ts               contextBridge API 暴露
-│   ├── renderer/                  React 渲染进程
-│   │   ├── index.html
-│   │   └── src/
-│   │       ├── App.tsx            根组件
-│   │       ├── main.tsx           渲染入口
-│   │       ├── store/
-│   │       │   └── useStore.ts    Zustand 全局状态
-│   │       ├── styles/
-│   │       │   └── global.css     全局样式与主题
-│   │       └── components/
-│   │           ├── Layout/        布局组件
-│   │           ├── Editor/        编辑器组件
-│   │           ├── Compact/       紧凑模式组件
-│   │           ├── Modals/        模态窗口
-│   │           └── Mini/           迷你窗口
-│   └── shared/
-│       └── types.ts               共享类型定义
-├── package.json
-├── electron.vite.config.ts
-├── tsconfig.json
-├── tsconfig.node.json
-├── tsconfig.web.json
-├── Flowna.vbs                     Windows 启动脚本
-├── create-desktop-shortcut.vbs    创建桌面快捷方式
-├── start.bat                      Windows 批处理启动
-├── 更新日志.txt
-└── README.md
-```
+windows版本软件下载链接（可直接安装使用）：https://pan.quark.cn/s/274fe9dce344
 
 ## 许可证
 
